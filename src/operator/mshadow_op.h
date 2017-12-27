@@ -107,7 +107,7 @@ MXNET_UNARY_MATH_OP(reciprocal, 1.0f / math::id(a));
 
 MXNET_UNARY_MATH_OP(reciprocal_grad, -1.0f / math::sqr(a));
 
-MXNET_UNARY_MATH_OP(sigmoid, 1.0f / (1.0f + math::exp(-a)));
+MXNET_UNARY_MATH_OP(sigmoid, 1.0f / (1.0f + math::expo(-a)));
 
 MXNET_UNARY_MATH_OP(sigmoid_grad, math::id(a) * (1.0f - math::id(a)));
 
@@ -149,6 +149,8 @@ MXNET_UNARY_MATH_OP(softrelu_grad, -math::expm1(-a));
 MXNET_SIMPLE_UNARY_MATH_OP(exp);
 
 MXNET_SIMPLE_UNARY_MATH_OP(expm1);
+
+MXNET_SIMPLE_UNARY_MATH_OP(expo);
 
 MXNET_SIMPLE_UNARY_MATH_OP(log);
 

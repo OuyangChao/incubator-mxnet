@@ -137,6 +137,16 @@ double sqr(double a) {
   return a * a;
 }
 
+template<typename DType> MSHADOW_XINLINE
+float expo(DType a) {
+  float af(static_cast<float>(a));
+  return expm1(af) + 1.0f;
+}
+MSHADOW_XINLINE
+double expo(double a) {
+  return expm1(a) + 1.0f;
+}
+
 }  // namespace math
 }  // namespace op
 }  // namespace mxnet
